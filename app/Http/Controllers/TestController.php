@@ -30,7 +30,6 @@ class TestController extends Controller
             'dba_indexes.table_name',
             'dba_indexes.tablespace_name',
             'last_analyzed')
-            ->take(10)
             ->get();
             return view('home', ["indexes" => $indexes]);
         } catch (Exception $ex) {
