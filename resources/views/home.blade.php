@@ -1,16 +1,7 @@
 <!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
-
+Template from
 * Product Page: https://www.creative-tim.com/product/paper-dashboard-2
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -126,7 +117,8 @@ Coded by www.creative-tim.com
                                 <h5 class="card-title">Rechercher</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form method="POST" action="/getIndex">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-4 pr-1">
                                             <div class="form-group">
@@ -140,13 +132,13 @@ Coded by www.creative-tim.com
                                         <div class="col-md-4 px-1">
                                             <div class="form-group">
                                                 <label>Schéma</label>
-                                                <input type="text" class="form-control" placeholder="Schéma" name="schema">
+                                                <input type="text" class="form-control" placeholder="Schéma" name="schema" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4 pl-1">
                                             <div class="form-group">
                                                 <label>Nom objet</label>
-                                                <input type="text" class="form-control" placeholder="Nom Table ou Index">
+                                                <input type="text" class="form-control" placeholder="Nom Table ou Index" name='nomObjet'>
                                             </div>
                                         </div>
                                     </div>
@@ -184,9 +176,6 @@ Coded by www.creative-tim.com
                                                 Table
                                             </th>
                                             <th class="border-right">
-                                                Colonnes indexées
-                                            </th>
-                                            <th class="border-right">
                                                 Propriétaire Index
                                             </th>
                                             <th class="border-right">
@@ -210,9 +199,6 @@ Coded by www.creative-tim.com
                                                 </td>
                                                 <td class="border-right">
                                                     {{ $index->table_name }}
-                                                </td>
-                                                <td class="border-right">
-
                                                 </td>
                                                 <td class="border-right">
                                                     {{ $index->owner }}
@@ -256,7 +242,9 @@ Coded by www.creative-tim.com
             <script src="../assets/js/core/jquery.min.js"></script>
             <script src="../assets/js/core/popper.min.js"></script>
             <script src="../assets/js/core/bootstrap.min.js"></script>
-            <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js" defer></script>
+            <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js" defer>
+            </script><!--  Notifications Plugin    -->
+            <script src="../assets/js/plugins/bootstrap-notify.js"></script>
 </body>
 
 <script type="text/javascript">

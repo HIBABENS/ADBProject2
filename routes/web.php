@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::get('/','TestController@index');
+Route::post('/getIndex','TestController@getIndex');
