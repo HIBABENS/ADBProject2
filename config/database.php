@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'oracle'),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,33 @@ return [
     */
 
     'connections' => [
-
+     
+        'oracle'      => [
+            'driver'       => 'oracle',
+            'host'         => 'localhost',
+            'port'         => '1521',
+            'database'     => 'orcl',
+            'service_name' => 'orcl',
+            'username' => 'connect /as sysdba',
+            'username' => 'user1',
+            'password' => 'hiba',
+            'charset'      => 'AL32UTF8',
+            'prefix'       => '',
+         ],
+        'my_connection' => [
+            'driver'   => 'oracle',
+            'host'     => env('DB_HOST', 'localhost'),
+            'port'     => env('DB_PORT', '1521'),
+            'service_name' => env('DB_SERVICE_NAME', 'orcl'),
+            'database' => env('DB_DATABASE', 'orcl'),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'options' => [
+                PDO::ATTR_PERSISTENT => true
+            ],
+        ],
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

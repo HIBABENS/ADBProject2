@@ -2,10 +2,23 @@
 
 return [
     'oracle' => [
+        'driver' => 'oracle',
+        'host' => 'oracle.host',
+        'port' => '1521',
+        'database' => 'orcl',
+        'service_name' => 'sid_alias',
+        'username' => 'hr',
+        'password' => 'hr',
+        'charset' => '',
+        'prefix' => '',
+    ],
+];
+/*return [
+    'oracle' => [
         'driver'         => 'oracle',
         'tns'            => env('DB_TNS', ''),
         'host'           => env('DB_HOST', ''),
-        'port'           => env('DB_PORT', '1522'),
+        'port'           => env('DB_PORT', '1521'),
         'database'       => env('DB_DATABASE', ''),
         'username'       => env('DB_USERNAME', ''),
         'password'       => env('DB_PASSWORD', ''),
@@ -15,4 +28,4 @@ return [
         'edition'        => env('DB_EDITION', 'ora$base'),
         'server_version' => env('DB_SERVER_VERSION', '11g'),
     ],
-];
+];*/

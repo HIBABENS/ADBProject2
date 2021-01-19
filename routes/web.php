@@ -12,9 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/*Route::get('/', function () {
+/*
+Route::get('/', function () {
     return view('welcome');
-});*/
-Route::get('/','TestController@index');
-Route::post('/getIndex','TestController@getIndex');
+});
+*/
+//Route::get('/','TemplateController@index');
+Route::get('/','DetailsController@index');
+
+Route::get('/detail/{id}', 'DetailsController@show')->name('detail.show');
+
+Route::post('/detail/mon', 'DetailsController@setMonitoring')->name('index.mon');
+Route::post('/detail/Unmon', 'DetailsController@unsetMonitoring')->name('index.Unmon');
+Route::post('/detail/ana', 'DetailsController@analize')->name('index.analyze');
